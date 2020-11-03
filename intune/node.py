@@ -44,6 +44,14 @@ class Miner(BasePollerFT):
             col = row.findAll('td')[1].contents
             if col[0][0].isdigit():
                 temp = ' '.join(map(str, col)).replace('<br/>', '').split()
+                temp2=[]
+                for i  in temp:
+                    if  '/' in i:
+                        continue
+                    else:
+                        i=i+'/32'
+                        temp2.append(i)
+                temp=temp2
             else:
                 continue
         result.extend(temp)
