@@ -47,7 +47,7 @@ class Miner(BasePollerFT):
                 temp2=[]
                 for i  in temp:
                     if  '/' in i:
-                        continue
+                        temp2.append(i)
                     else:
                         i=i+'/32'
                         temp2.append(i)
