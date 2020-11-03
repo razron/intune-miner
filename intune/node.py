@@ -40,10 +40,17 @@ class Miner(BasePollerFT):
 
         # parse the table
         html_soup = BeautifulSoup(r.content, "lxml")
-        table = html_soup.find_all('table')[0]
-        df = pd.read_html(str(table))[0]
-        result = df[df.columns[1]].tolist()
-        result = ' '.join(result).split()
+        result=[]
+        for row in html_soup.findAll('table')[0].tbody.findAll('tr'):
+            col = row.findAll('td')[1].contents
+            if col[0][0].isdigit():
+                temp = ' '.join(map(str, col)).replace('<br/>', '').split()
+            else:
+                continue
+        result.extend(temp)
+        print result
+
+        
         return result
 
     def _process_item(self, item):
