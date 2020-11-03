@@ -52,9 +52,9 @@ class Miner(BasePollerFT):
                         i=i+'/32'
                         temp2.append(i)
                 temp=temp2
+                result.extend(temp)
             else:
                 continue
-            result.extend(temp)
         return result
 
     def _process_item(self, item):
