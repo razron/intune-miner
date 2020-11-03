@@ -1,0 +1,29 @@
+url: 
+description: >
+  Sample extension for MineMeld.
+
+prototypes:
+  miner:
+    author: Aaron Wrasman
+    class: intune.Miner
+    development_status: EXPERIMENTAL
+    node_type: miner
+    indicator_types:
+      - IPv4
+    tags:
+      - extension
+      - nessus
+    description: >
+      test prototype for intune.Miner, mines Intune IP addresses
+    config:
+      interval: 3600
+      # source url to scrap indicators from (don't change)
+      url: https://docs.microsoft.com/en-us/mem/intune/fundamentals/intune-endpoints
+      # age out of indicators
+      # disabled, removed when they disappear from the url
+      age_out:
+        sudden_death: true
+        default: null
+      # flag indicators with share level green
+      attributes:
+        share_level: green

@@ -1,0 +1,16 @@
+{
+    "version": "0.1",
+    "name": "intune-miner",
+    "author": "Aaron Wrasman",
+    "author_email": "-",
+    "description": "Sample MineMeld node extension for scrapping IP addresses from https://docs.microsoft.com/en-us/mem/intune/fundamentals/intune-endpoints",
+    "entry_points": {
+        "minemeld_nodes": {
+            "intune.Miner": "intune.node:Miner"
+        },
+        "minemeld_prototypes": {
+            "intune.prototypes": "intune:prototypes"
+        }
+    },
+    "manifest_version": 0
+}
