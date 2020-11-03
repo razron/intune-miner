@@ -55,9 +55,6 @@ class Miner(BasePollerFT):
             else:
                 continue
         result.extend(temp)
-        print result
-
-        
         return result
 
     def _process_item(self, item):
