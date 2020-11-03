@@ -2,7 +2,6 @@ import logging
 import json
 
 import requests
-import pandas as pd
 from bs4 import BeautifulSoup
 
 from minemeld.ft.basepoller import BasePollerFT
